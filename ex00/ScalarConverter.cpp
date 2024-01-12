@@ -264,11 +264,5 @@ namespace
 ScalarConverter::ScalarConverter(void) {}
 ScalarConverter::ScalarConverter(const ScalarConverter& source) { (void)source; }
 ScalarConverter&	ScalarConverter::operator=(const ScalarConverter& source)
-{
-	if (this != &source)
-	{
-	}
-
-	return (*this);
-}
+{ if (this != &source) {} return (*this); }
 ScalarConverter::~ScalarConverter(void) {}
