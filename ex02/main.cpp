@@ -1,20 +1,24 @@
 #include <iostream>
-#include "Serializer.hpp"
-#include "Data.hpp"
+#include <cstdlib>
+#include <ctime>
+#include "Base.hpp"
 
 int	main(void)
 {
-	Data		test;
-	uintptr_t	temp;
-	Data*		ptr;
+	srand(static_cast<unsigned int>(time(NULL)));
 
-	test.data = 42;
+	for (int i = 0; i < 15; ++i)
+	{
+		Base* base = generate();
 
-	temp = Serializer::serialize(&test);
-	ptr = Serializer::deserialize(temp);
+		std::cout << "Test " << i << std::endl;
+		std::cout << "Pointer : ";
+		identify(base);
+		std::cout << "Reference : ";
+		identify(*base);
 
-	std::cout << "value : " << test.data << std::endl;
-	std::cout << "value(ptr) : " << ptr->data << std::endl;
+		delete base;
+	}
 
 	return (0);
 }
