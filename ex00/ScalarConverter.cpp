@@ -207,7 +207,7 @@ namespace
 				std::cout << input.u_value.Float << std::endl;
 				return ;
 			case TYPE_Double:
-				if (static_cast<double>(std::numeric_limits<float>::min())
+				if (static_cast<double>(std::numeric_limits<float>::lowest())
 					<= input.u_value.Double && input.u_value.Double <=
 					static_cast<double>(std::numeric_limits<float>::max()))
 					std::cout << static_cast<float>(input.u_value.Double) << std::endl;
